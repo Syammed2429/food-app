@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Latest Receipe</title>
+    <style>
+        body, html {
+            width: 100%;
+            height: 100%;
+        }
+        header {
+            top: 0;
+        }
+        *{
+            border: 1px solid green;
+        }
+        h1 {
+            max-width:  80%;
+            height: auto;
+            margin: auto;
+            text-align: center;
+            position: relative;
+            top: 20%;
+        }
+    </style>
+</head>
+<body>
+        <h1>Latest Recipe</h1>
+        <div class="container">
+            <div id="data"></div>
+        </div>
+
+
+<script type="module">
+let arr = ['Beef',
+           'Chicken',
+           'Dessert',
+           'Lamb',
+           'Miscellaneous',
+           'Pasta',
+           'Pork',
+           'Seafood',
+           'Side',
+           'Starter',
+           'Vegan',
+           'Vegetarian',
+           'Breakfast',
+           'Goat'
+        ];
+let random = arr[Math.floor(Math.random() * arr.length)];
+console.log('random:', random)
+
+
+
+// Importing the navbar and appending it to the body
+    import navbar from './component/navbar.js';
+    import {getData,appendData} from './food-app-scripts/showData.js'
+
+    let navBar = document.createElement('div');
+    navBar.innerHTML = navbar();
+    document.body.prepend(navBar)
+
+    let getMealData = getData(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${random}`)
+    let result = await getMealData;
+    console.log('result:', result)
+
+
+
+// console.log(Math.random(arr));
+</script>
+
+
+    
+</body>
+</html>
