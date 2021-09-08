@@ -1,0 +1,72 @@
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+section {
+  width: 100%;
+  position: absolute;
+  /* margin-top: 5%; */
+  top: 20%;
+  text-align: center;
+}
+section h1 {
+    margin: 1% 0;
+  color: red;
+  font-size: 3rem;
+  font-family: 'Pristina', sans-serif;
+                                                
+}
+.search-cont {
+    margin: -1% 0;
+}
+#data {
+  display: grid;
+  grid-template-columns: repeat(5, 20%);
+  margin-top: 2%;
+}
+#data img {
+  width: 70%;
+  align-items: center;
+}
+#data > div {
+  width: 80%;
+  margin: 5%;
+  /* margin-bottom: 5%; */
+  padding: 0 3%;
+  /* display: flex; */
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  /* justify-content: center; */
+  gap: 2%;
+  align-items: center;
+  flex-wrap: nowrap;
+  /* box-shadow: 0 1px 2px 3px red;  */
+  box-shadow: inset 3px 5px 10px 3px rgb(218, 209, 209);
+}
+
+#data > div:hover {
+  /* /* box-shadow: 4px 5px 10px 3px rgb(218, 209, 209); */
+  cursor: pointer; 
+  border-color:#d3d5df;
+  box-shadow:0 4px 7px 0 rgba(218,220,230,.6)
+}
+
+
+.search {
+  width: 40%;
+  height: 30px;
+}
+section button {
+    padding : 8px 2%;
+}
+#meal-search {
+  /* background: rgba(255, 255, 255, 0.2); */
+  background-color: aquamarine;
+  width: 40%;
+  height: 150px;
+  margin: auto;
+  overflow-y: auto;
+}
+

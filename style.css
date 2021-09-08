@@ -1,0 +1,37 @@
+body {
+    margin : 0;
+    padding : 0;
+    box-sizing: border-box;
+}
+body , html {
+    height : 100vh;
+    max-width: 100%;
+    /* background : green */
+
+}
+* {
+    /* border : 1px solid red; */
+}
+header {
+    height : 4rem;
+    position: fixed;
+    left : 0;
+    right : 0;
+    box-shadow: 0 0 10px;
+    z-index: 1;
+    background: white;
+}
+ul {
+    display : flex;
+    justify-content: flex-end;
+    margin-right: 2rem;
+}
+
+ul li {
+    display : inline-block;
+    padding: 0.2% 5%;
+}
+ header a {
+    /* cursor: pointer; */
+    text-decoration: none;
+}
