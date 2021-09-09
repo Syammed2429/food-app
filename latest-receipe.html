@@ -5,11 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
     <title>Latest Receipe</title>
     <style>
         body, html {
             width: 100%;
             height: 100%;
+            font-family: 'Patrick Hand', cursive;
         }
         header {
             top: 0;
@@ -24,6 +28,7 @@
             text-align: center;
             position: relative;
             top: 20%;
+            font-size: 40px;
         }
         .container {
             margin-top: 10%;
@@ -32,26 +37,51 @@
             width: 80%;
             border-radius: 25px;
             padding: 10px;
+            margin-top: 20px;
+        }
+        #data img:hover {
         }
         #data {
             width: 800px;
             display: grid;
             grid-template-columns: repeat(5,50%);
+            margin-left: 18px;
             
         }
         #data  div {
             margin-bottom: 25%;
             text-align: center;
+
         }
         .recipeData {
             width: 250px;
-            height: 280px;
+            height: 320px;
             cursor: pointer;
             margin-top: 5%;
+            /* grid-gap: 5px; */
+            /* margin-left: auto; */
             /* background: yellowgreen; */
             /* box-shadow: 0 1px 2px 0 rgb(199, 184, 184); */
             box-shadow:  3px 5px 10px 3px rgb(218, 209, 209);
             border-radius: 20px;
+        }
+        .recipeData:hover {
+            box-shadow:  -1px 9px 19px 13px  rgb(218, 209, 209);
+            transform: scale(1.3);
+
+            
+
+        }
+        .category-name {
+            margin: 8px 0;
+            text-align: center;
+            font-size: larger;
+            font-size: 25px;
+        }
+        .recipeName {
+            /* color: red; */
+            font-size: 18px;
+
         }
     </style>
 </head>
@@ -107,6 +137,7 @@
         let recipeName = document.createElement('p');
         let recipeImage = document.createElement('img');
 
+        recipeName.classList.add('recipeName')
         recipeName.innerHTML = data.strMeal;
         recipeImage.src = data.strMealThumb;
 
