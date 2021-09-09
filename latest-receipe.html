@@ -15,7 +15,7 @@
             top: 0;
         }
         *{
-            border: 1px solid green;
+            /* border: 1px solid green; */
         }
         h1 {
             max-width:  80%;
@@ -25,33 +25,65 @@
             position: relative;
             top: 20%;
         }
+        .container {
+            margin-top: 10%;
+        }
+        #data img {
+            width: 80%;
+            border-radius: 25px;
+            padding: 10px;
+        }
+        #data {
+            width: 800px;
+            display: grid;
+            grid-template-columns: repeat(5,50%);
+            
+        }
+        #data  div {
+            margin-bottom: 25%;
+            text-align: center;
+        }
+        .recipeData {
+            width: 250px;
+            height: 280px;
+            cursor: pointer;
+            margin-top: 5%;
+            /* background: yellowgreen; */
+            /* box-shadow: 0 1px 2px 0 rgb(199, 184, 184); */
+            box-shadow:  3px 5px 10px 3px rgb(218, 209, 209);
+            border-radius: 20px;
+        }
     </style>
 </head>
 <body>
         <h1>Latest Recipe</h1>
         <div class="container">
+            <div class="category-name"></div>
             <div id="data"></div>
         </div>
 
 
 <script type="module">
-let arr = ['Beef',
-           'Chicken',
-           'Dessert',
-           'Lamb',
-           'Miscellaneous',
-           'Pasta',
-           'Pork',
-           'Seafood',
-           'Side',
-           'Starter',
-           'Vegan',
-           'Vegetarian',
-           'Breakfast',
-           'Goat'
-        ];
-let random = arr[Math.floor(Math.random() * arr.length)];
-console.log('random:', random)
+    let categoryName = document.querySelector('.category-name');
+
+    let arr = ['Beef',
+            'Chicken',
+            'Dessert',
+            'Lamb',
+            'Miscellaneous',
+            'Pasta',
+            'Pork',
+            'Seafood',
+            'Side',
+            'Starter',
+            'Vegan',
+            'Vegetarian',
+            'Breakfast',
+            'Goat'
+            ];
+    let random = arr[Math.floor(Math.random() * arr.length)];
+    categoryName.innerHTML = `Category Of Recipe : ${random}`;
+    console.log('random:', random)
 
 
 
@@ -67,7 +99,21 @@ console.log('random:', random)
     let result = await getMealData;
     console.log('result:', result)
 
+    let dataDiv = document.getElementById('data')
+    
+    for(let data of result) {
+        // console.log("HUU");
+        let div = document.createElement('div');
+        let recipeName = document.createElement('p');
+        let recipeImage = document.createElement('img');
 
+        recipeName.innerHTML = data.strMeal;
+        recipeImage.src = data.strMealThumb;
+
+        div.append(recipeImage,recipeName);
+        div.classList.add('recipeData')
+        dataDiv.append(div)
+    }
 
 // console.log(Math.random(arr));
 </script>
